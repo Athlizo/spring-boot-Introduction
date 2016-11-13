@@ -1,0 +1,4 @@
+dubbo:
+  registry: zookeeper://101.200.34.67:2181
+  port: 20882
+
