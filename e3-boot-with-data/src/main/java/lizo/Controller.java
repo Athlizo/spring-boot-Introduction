@@ -1,3 +1,6 @@
+package lizo;
+
+import lizo.jpa.DemoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
@@ -16,17 +19,29 @@ public class Controller {
     @Autowired
     CacheManager cacheManager;
 
-    @RequestMapping("/delete")
-    Object delete(Long id) {
-        demoService.delete(id);
-        return "success";
-    }
 
+
+
+    /*
+        test JAP
+     */
     @RequestMapping("/findOne")
     Object findOne(Person person) {
         return demoService.findOne(person);
     }
 
+    /*
+        test @Query
+     */
+    @RequestMapping("/myFindByName")
+    Object myFindByName(String name) {
+        return demoService.myFindByName(name);
+    }
+
+
+    /*
+        test cache
+     */
     @RequestMapping("/save")
     Object save(Person person) {
         return demoService.save(person);

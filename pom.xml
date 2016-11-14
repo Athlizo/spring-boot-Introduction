@@ -12,9 +12,8 @@
     <modules>
         <module>e1-simple-example</module>
         <module>e2-boot-with-mybatis</module>
-        <module>e3-boot-data</module>
-        <module>e4-boot-cache</module>
         <module>e4-boot-dubbo</module>
+        <module>e3-boot-with-data</module>
     </modules>
 
     

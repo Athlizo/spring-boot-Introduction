@@ -1,10 +1,13 @@
+package lizo;
+
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by 李周 on 2016/11/7.
  */
 @Entity
-public class Person {
+public class Person implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -41,7 +44,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
+        return "lizo.Person{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +

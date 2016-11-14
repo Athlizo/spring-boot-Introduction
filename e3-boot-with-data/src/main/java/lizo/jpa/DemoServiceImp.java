@@ -1,3 +1,7 @@
+package lizo.jpa;
+
+import lizo.Person;
+import lizo.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
@@ -12,6 +16,11 @@ import org.springframework.stereotype.Service;
 public class DemoServiceImp implements DemoService {
     @Autowired
     PersonRepository personRepository;
+
+    @Override
+    public Object myFindByName(String name) {
+        return personRepository.myFindByName(name);
+    }
 
     @Override
     @CacheEvict(value = "person")
